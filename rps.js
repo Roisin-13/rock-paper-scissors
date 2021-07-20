@@ -3,20 +3,24 @@ let paper = document.getElementById("userPaper");
 let scissors = document.getElementById("userScissors");
 let choice = document.querySelector(".choices");
 let title = document.getElementById("titleClick");
+let result = document.getElementById("result");
+let iArray = [rock, paper, scissors]
 
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3);
    if (randomNumber === 0) {
-      return "rock";
+        result.innerHTML = '<i class="far fa-hand-rock"></i>';
     } else if (randomNumber === 1) {
-      return "scissors";
+        result.innerHTML = '<i class="far fa-hand-paper"></i>';
     } else if (randomNumber === 2) {
-      return "paper";
+        result.innerHTML = '<i class="far fa-hand-scissors"></i>';
     } 
   };
+getComputerChoice();
 
-let text = getComputerChoice();
-choice.innerHTML = `${text}`;
+/*
+document.getElementById("result").innerHTML = getComputerChoice();
+//choice.innerHTML = `${getComputerChoice()}`
 console.log(getComputerChoice());
-
+*/
 

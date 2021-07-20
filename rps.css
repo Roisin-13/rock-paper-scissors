@@ -31,3 +31,17 @@ body {
 #userRock, #userPaper, #userScissors {
     font-size: 150px;
 }
+.computerBox {
+    border: 1px solid black;
+    display: block;
+	text-align: center;
+	font-family: "American Typewriter", serif;
+	font-size: 20px;
+	color: black;
+	width: 100%;
+	height: auto;
+	padding: 50px; 
+}
+#result {
+    font-size: 150px;
+}
