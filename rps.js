@@ -1,26 +1,70 @@
 let rock = document.getElementById("userRock");
 let paper = document.getElementById("userPaper");
 let scissors = document.getElementById("userScissors");
-let choice = document.querySelector(".choices");
-let title = document.getElementById("titleClick");
+//let compChoiceDec = document.querySelector(".choices");
+//let title = document.getElementById("titleClick");
+let compChoiceIcon = document.getElementById("computerChoice");
+let userChoiceDec = document.querySelector(".myChoice")
+let iArray = ["r", "p", "s"]
 let result = document.getElementById("result");
-let iArray = [rock, paper, scissors]
+
 
 function getComputerChoice() {
-    let randomNumber = Math.floor(Math.random() * 3);
-   if (randomNumber === 0) {
-        result.innerHTML = '<i class="far fa-hand-rock"></i>';
-    } else if (randomNumber === 1) {
-        result.innerHTML = '<i class="far fa-hand-paper"></i>';
-    } else if (randomNumber === 2) {
-        result.innerHTML = '<i class="far fa-hand-scissors"></i>';
-    } 
-  };
+  let randomNumber = Math.floor(Math.random() * 3);
+ if (randomNumber === 0) {
+      //compChoiceIcon.innerHTML = '<i class="far fa-hand-rock"></i>';
+      return iArray[0];
+  } else if (randomNumber === 1) {
+      //compChoiceIcon.innerHTML = '<i class="far fa-hand-paper"></i>';
+      return iArray[1];
+  } else if (randomNumber === 2) {
+      //compChoiceIcon.innerHTML = '<i class="far fa-hand-scissors"></i>';
+      return iArray[2];
+  } 
+};
 getComputerChoice();
 
-/*
-document.getElementById("result").innerHTML = getComputerChoice();
-//choice.innerHTML = `${getComputerChoice()}`
-console.log(getComputerChoice());
-*/
+
+
+
+function getUserChoice() {
+  rock.addEventListener("click", function() {
+      game(iArray[0]);
+  });
+  paper.addEventListener("click", function() {
+      game(iArray[1]);
+  });
+  scissors.addEventListener("click", function() {
+      game(iArray[2]);
+  });
+  };
+  getUserChoice();
+
+
+function game(userChoice){
+  let computerChoice = getComputerChoice();
+  console.log(userChoice + " user choice");
+  console.log(computerChoice + " computer choice");
+  switch(userChoice + computerChoice) {
+    case "rr":
+    case "pp":
+    case "ss":
+      console.log("It's a tie!");
+      break;
+    case "rp":
+    case "ps":
+    case "sr":
+      console.log("You lose!");
+      break;
+    case "rs":
+    case "pr":
+    case "sp":
+      console.log("You Win!");
+      break;     
+  };
+};
+
+
+
+
 
