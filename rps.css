@@ -29,6 +29,7 @@ body {
 }
 #userRock, #userPaper, #userScissors {
     font-size: 150px;
+	cursor: pointer;
 }
 .computerBox {
     display: block;
