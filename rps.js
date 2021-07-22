@@ -12,18 +12,16 @@ let result = document.getElementById("result");
 function getComputerChoice() {
   let randomNumber = Math.floor(Math.random() * 3);
  if (randomNumber === 0) {
-      //compChoiceIcon.innerHTML = '<i class="far fa-hand-rock"></i>';
+      compChoiceIcon.innerHTML = '<i class="far fa-hand-rock"></i>';
       return iArray[0];
   } else if (randomNumber === 1) {
-      //compChoiceIcon.innerHTML = '<i class="far fa-hand-paper"></i>';
+      compChoiceIcon.innerHTML = '<i class="far fa-hand-paper"></i>';
       return iArray[1];
   } else if (randomNumber === 2) {
-      //compChoiceIcon.innerHTML = '<i class="far fa-hand-scissors"></i>';
+      compChoiceIcon.innerHTML = '<i class="far fa-hand-scissors"></i>';
       return iArray[2];
   } 
 };
-getComputerChoice();
-
 
 
 
@@ -49,17 +47,17 @@ function game(userChoice){
     case "rr":
     case "pp":
     case "ss":
-      console.log("It's a tie!");
+      result.innerHTML = "It's a tie!";
       break;
     case "rp":
     case "ps":
     case "sr":
-      console.log("You lose!");
+      result.innerHTML = "You lose!";
       break;
     case "rs":
     case "pr":
     case "sp":
-      console.log("You Win!");
+      result.innerHTML = "You Win!";
       break;     
   };
 };
