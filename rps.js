@@ -48,8 +48,6 @@ function getComputerChoice() {
 //--------to play the game
 function game(userChoice){
   let computerChoice = getComputerChoice();
-  console.log(userChoice + " user choice");
-  console.log(computerChoice + " computer choice");
   switch(userChoice + computerChoice) {
     case "rr":
     case "pp":
