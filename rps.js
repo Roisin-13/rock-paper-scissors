@@ -8,6 +8,11 @@ let compChoiceDec = document.querySelector(".compChoiceWords");
 let result = document.getElementById("result");
 let iArray = ["r", "p", "s"];
 
+let humanscore = document.getElementById("humanscore");
+let machinescore = document.getElementById("machinescore")
+let yourscore = 0;
+let compscore = 0;
+
 //-------------for user choice
 function getUserChoice() {
   rock.addEventListener("click", function() {
@@ -58,11 +63,15 @@ function game(userChoice){
     case "ps":
     case "sr":
       result.innerHTML = "You lose!";
+      compscore++;
+      machinescore.innerHTML = compscore;
       break;
     case "rs":
     case "pr":
     case "sp":
       result.innerHTML = "You Win!";
+      yourscore++;
+      humanscore.innerHTML = yourscore;
       break;     
   };
 };
